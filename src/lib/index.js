@@ -23,6 +23,7 @@ Tawk.install = function (Vue, options) {
     if (!isInit()) return
     if (!user) return
     window.Tawk_API.onLoad = function () {
+      console.log("ok");
       window.Tawk_API.setAttributes({
         'name': user.name,
         'email': user.email,
