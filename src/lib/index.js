@@ -20,10 +20,9 @@ Tawk.install = function (Vue, options) {
     window.Tawk_API = Tawk_API
   }
   Vue.prototype.$Tawk.$updateChatUser = (user) => {
-    if (!isInit()) return
-    if (!user) return
     window.Tawk_API.onLoad = function () {
-      console.log("ok");
+      if (!isInit()) return
+      if (!user) return
       window.Tawk_API.setAttributes({
         'name': user.name,
         'email': user.email,
